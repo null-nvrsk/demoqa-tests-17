@@ -2,7 +2,6 @@ package demoqa;
 
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 
@@ -32,20 +31,17 @@ public class PracticeFormWithPageObjectsTests extends BaseTest {
                 .setEmail(USER_EMAIL)
                 .setGender(USER_GENDER)
                 .setPhone(USER_NUMBER)
-                .setBirthDate(USER_BIRTH_DAY, USER_BIRTH_MONTH, USER_BIRTH_HEAR);
+                .setBirthDate(USER_BIRTH_DAY, USER_BIRTH_MONTH, USER_BIRTH_HEAR)
+                .setSubject(SUBJECT1) // Maths
+                .setSubject(SUBJECT2) // Biology
+                .setSubject(SUBJECT3) // Computer Science
+                .setHobby(HOBBY1)
+                .setHobby(HOBBY2)
+                .uploadPicture("img/avatar.png")
+                .setCurrentAddress(CURRENT_ADDRESS)
+                .setStateAndCity(STATE, CITY);
 
-        $("#subjectsInput").setValue(SUBJECT1).pressTab(); // Maths
-        $("#subjectsInput").setValue(SUBJECT2).pressTab(); // Biology
-        $("#subjectsInput").setValue(SUBJECT3).pressTab(); // Computer Science
-        $("#hobbiesWrapper").$(byText(HOBBY1)).click();
-        $("#hobbiesWrapper").$(byText(HOBBY2)).click();
-        $("#uploadPicture").uploadFromClasspath("img/avatar.png");
-        $("#currentAddress").setValue(CURRENT_ADDRESS);
-        $("#state").click();
-        $("#stateCity-wrapper").$(byText(STATE)).click();
-        $("#city").click();
-        $("#stateCity-wrapper").$(byText(CITY)).click();
-        $("button#submit").click();
+        regPage.submitRegistrtionForm();
 
         regPage
                 .verifyResultsModal()

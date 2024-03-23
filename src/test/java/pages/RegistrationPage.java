@@ -19,7 +19,12 @@ public class RegistrationPage {
             emailInput = $("#userEmail"),
             genderRadio = $("#genterWrapper"),
             userNumberInput = $("#userNumber"),
-            dateOfBirthInput = $("#dateOfBirthInput");
+            dateOfBirthInput = $("#dateOfBirthInput"),
+            subjectsInput = $("#subjectsInput"),
+            hobbyCheckbox = $("#hobbiesWrapper"),
+            inputUploadPicture = $("#uploadPicture"),
+            textareaCurrentAddress = $("#currentAddress"),
+            buttonSubmit = $("#submit");
 
 
 
@@ -66,11 +71,42 @@ public class RegistrationPage {
         return this;
     }
 
+    public RegistrationPage setSubject(String subject) {
+        subjectsInput.setValue(subject).pressTab();
+        return this;
+    }
+
+    public RegistrationPage setHobby(String hobby) {
+        hobbyCheckbox.$(byText(hobby)).click();
+        return this;
+    }
+
+    public RegistrationPage uploadPicture(String filepath) {
+        inputUploadPicture.uploadFromClasspath(filepath);
+        return this;
+    }
+
+    public RegistrationPage setCurrentAddress(String address) {
+        textareaCurrentAddress.setValue(address);
+        return this;
+    }
+
+    public RegistrationPage setStateAndCity(String state, String city) {
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText(state)).click();
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText(city)).click();
+        return this;
+    }
+
+    public void submitRegistrtionForm() {
+        buttonSubmit.click();
+    }
+
     public RegistrationPage verifyResultsModal() {
         registrationResultsModal.verifyModalAppears();
         return this;
     }
-
 
     public RegistrationPage verifyResult(String key, String value) {
         registrationResultsModal.verifyResult(key, value);
