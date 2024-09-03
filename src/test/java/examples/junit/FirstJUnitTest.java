@@ -1,4 +1,4 @@
-package junit;
+package examples.junit;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;

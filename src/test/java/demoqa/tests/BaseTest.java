@@ -1,8 +1,8 @@
-package demoqa;
+package demoqa.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import pages.RegistrationPage;
+import demoqa.pages.RegistrationPage;
 
 public class BaseTest {
     RegistrationPage regPage = new RegistrationPage();
@@ -12,7 +12,8 @@ public class BaseTest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserPosition = "0x0";
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = true;
+        //Configuration.holdBrowserOpen = true;
+        Configuration.timeout = 120_000;
+        Configuration.pageLoadTimeout = 120_000;
     }
-
 }
