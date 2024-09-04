@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 
-
 public class PracticeFormWithPageObjectsTests extends BaseTest {
     @Test
     void successRegistrationTest() {
