@@ -18,7 +18,7 @@ dependencies {
             "com.codeborne:selenide:$selenideVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:2.0.12",
-            "com.github.javafaker:javafaker:0.12"
+            "com.github.javafaker:javafaker:1.0.2"
     )
 }
 

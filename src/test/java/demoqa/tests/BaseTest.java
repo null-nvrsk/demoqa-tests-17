@@ -5,6 +5,9 @@ import org.junit.jupiter.api.BeforeAll;
 import demoqa.pages.RegistrationPage;
 
 public class BaseTest {
+
+    TestData testData = new TestData();
+
     RegistrationPage regPage = new RegistrationPage();
 
     @BeforeAll
@@ -13,7 +16,7 @@ public class BaseTest {
         Configuration.browserPosition = "0x0";
         Configuration.browserSize = "1920x1080";
         //Configuration.holdBrowserOpen = true;
-        Configuration.timeout = 120_000;
+        //Configuration.timeout = 120_000;
         Configuration.pageLoadTimeout = 120_000;
     }
 }
